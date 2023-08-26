@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/Background/Skill/wave-haikei.svg) no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    /* margin: 30px; */
+}
+
+.portfolio-main {
+    padding: 0 200px;
+    min-height: 100vh;
+    padding-bottom: 20px;
+    width: 100vw;
+    /* border-radius: 30px; */
+    /* background: rgba(0, 0, 0, 0.2); */
+    background: linear-gradient(153.28deg,
+            rgba(255, 255, 255, 0.1) 1.19%,
+            rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(13px);
+}
+
+.container {
+    width: 100%;
+}
+
+/* Navbar */
+header {
+    padding-top: 35px;
+}
+
+.logo a svg {
+    fill: #fefefe;
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.nav-bar ul li a {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    /* color: #292423; */
+    color: #fefefe;
+    text-transform: capitalize;
+    transition: all 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    opacity: 0.5;
+}
+
+.nav-bar ul li.hire-btn {
+    margin-left: 100px !important;
+}
+
+.nav-bar ul li.hire-btn a {
+    padding: 10px 32px;
+    background-color: #6c5ce7;
+    color: #fefefe;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.nav-bar ul li.active {
+    padding: 10px 32px;
+    color: #fff;
+    background: rgba(221, 152, 255, 0.62);
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.nav-bar ul li.hire-btn a:hover {
+    background-color: #fefeff;
+    color: #6c5ce7;
+    font-weight: bolder;
+    opacity: 0.8;
+}
+
+#sec-1 {
+    /* display: grid;
+    height: 85vh;
+    place-items: center; */
+    /* color: #fefeff; */
+    display: flex;
+    justify-content: space-around;
+    height: 85vh;
+    align-items: center;
+    color: #fefefe;
+    opacity: 0;
+    animation: showText 0.2s 0.2s linear forwards;
+}
+
+.home_button {
+    /* transform: translateY(-5px); */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home_button img {
+    height: 35vh;
+    opacity: 0;
+    animation: showText 0.5s 0.5s linear forwards;
+}
+
+.skills-bar {
+    width: 600px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.skills-bar .bar {
+    margin: 30px 0;
+}
+
+.skills-bar .bar:first-child {
+    margin-top: 0px;
+}
+
+.skills-bar .bar .info {
+    margin-bottom: 5px;
+}
+
+.skills-bar .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+.skills-bar .bar .progress-line {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: rgba(240, 240, 240, 0.251);
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5),
+        0 1px rgba(0, 0, 0, 0.3);
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    background-color: #6665ee;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progress-line.html span {
+    width: 90%;
+}
+
+.progress-line.css span {
+    width: 95%;
+}
+
+.progress-line.js span {
+    width: 80%;
+}
+
+.progress-line.python span {
+    width: 50%;
+}
+
+.progress-line.c span {
+    width: "75%";
+}
+
+.bar .progress-line span::before {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    top: -8px;
+    right: 1px;
+    transform: rotate(-2deg);
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: rgba(0, 0, 0, 0.422);
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+
+}
+
+.bar .progress-line span::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -28px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.482);
+    padding: 1px 8px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+.progress-line.html span::after {
+    content: "90%";
+}
+
+.progress-line.css span::after {
+    content: "95%";
+}
+
+.progress-line.js span::after {
+    content: "80%";
+}
+
+.progress-line.python span::after {
+    content: "50%";
+}
+
+.progress-line.c span::after {
+    content: "75%";
+}
+
+/* For navagation */
+@media (max-width: 1401px)
+{
+    .portfolio-main
+    {
+        padding: 0 100px;
+    }
+
+    .nav-bar ul li.hire-btn
+    {
+        margin-left: 40px !important;
+    }
+}
+@media (max-width: 1131px)
+{
+    .portfolio-main
+    {
+        padding: 0 50px;
+    }
+
+    .nav-bar ul li.hire-btn
+    {
+        margin-left: 10px !important;
+    }
+}
+@media (max-width: 1008px)
+{
+    .portfolio-main
+    {
+        padding: 0px;
+    }
+
+    .nav-bar ul li.hire-btn
+    {
+        margin-left: 10px !important;
+    }
+}
+@media (max-width: 902px)
+{
+    .portfolio-main
+    {
+        padding: 0px;
+    }
+
+    .nav-bar ul li.hire-btn
+    {
+        margin-left: 5px !important;
+    }
+
+    .nav-bar ul li.hire-btn a
+    {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    #sec-1
+    {
+        justify-content: space-around;
+    }
+
+    #sec-1 .skills-bar
+    {
+        width: 400px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 25px 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+@media (max-width: 871px)
+{
+    .portfolio-main
+    {
+        padding: 0px;
+    }
+
+    .nav-bar ul li.hire-btn
+    {
+        margin-left: 5px !important;
+    }
+
+    .nav-bar ul li.hire-btn a
+    {
+        padding: 10px 20px;
+        font-size: 15px;
+        display: none;
+    }
+    #sec-1
+    {
+        justify-content: space-around;
+    }
+
+    #sec-1 .skills-bar
+    {
+        width: 400px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 25px 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .home_button img
+    {
+        height: 20vh;
+    }
+}
